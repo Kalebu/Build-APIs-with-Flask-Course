@@ -2,6 +2,7 @@
 
 This repo consists of content material for a swahili flask course hosted on barmaga.io for getting started building restful API with Flask
 
+<img src="webapi.jpeg" height="250" width="400">
 
 ## what will you build ?
 
