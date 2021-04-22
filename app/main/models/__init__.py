@@ -15,3 +15,21 @@ class Transports(db.Model):  # table
 
     def __repr__(self) -> str:
         return f'<Transport {self.id}> : {self.rent_fee}'
+
+
+# Tour guiders
+#     - name
+#     - location
+#     - charging fee
+#     - description
+#     - phone
+#     - date
+
+# Places to visit
+#     - hoster_name,
+#     - location
+#     - places to visit
+#     - pricing
+#     - description
+#     - phone
+#     -date
