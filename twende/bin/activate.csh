@@ -10,7 +10,7 @@ alias deactivate 'test $?_OLD_VIRTUAL_PATH != 0 && setenv PATH "$_OLD_VIRTUAL_PA
 # Unset irrelevant variables.
 deactivate nondestructive
 
-setenv VIRTUAL_ENV '/home/kalebu/Work/Personal/courses/Build-APIs-with-Flask-Course/test-env'
+setenv VIRTUAL_ENV '/home/kalebu/Work/Barmaga.io/Flask-Course/twende'
 
 set _OLD_VIRTUAL_PATH="$PATH:q"
 setenv PATH "$VIRTUAL_ENV:q/bin:$PATH:q"

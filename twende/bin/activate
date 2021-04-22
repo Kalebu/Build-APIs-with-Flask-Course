@@ -46,7 +46,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV='/home/kalebu/Work/Personal/courses/Build-APIs-with-Flask-Course/test-env'
+VIRTUAL_ENV='/home/kalebu/Work/Barmaga.io/Flask-Course/twende'
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
