@@ -1,4 +1,4 @@
 {
     "python.pythonPath": "/home/kalebu/Work/Personal/courses/Build-APIs-with-Flask-Course/test-env/bin/python3.8",
-    "python.formatting.provider": "black"
+    "python.formatting.provider": "autopep8"
 }
