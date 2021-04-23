@@ -1,4 +1,5 @@
 import datetime
+from hashlib import sha256
 from flask.globals import request
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
@@ -106,3 +107,31 @@ class serializePlacesSchema(ma.SQLAlchemyAutoSchema):
     @post_load
     def create_place_to_visit(self, places_data, **kwargs):
         return placesToVisit(**places_data)
+
+
+class Users(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(128), nullable=False)
+    phone = db.Column(db.String(128), nullable=False)
+    password = db.Column(db.String(128), nullable=False)
+    token = db.Column(db.String(500), nullable=True)
+
+    def __init__(self, **kwargs) -> None:
+        super(Users, self).__init__(**kwargs)
+        self.password = sha256(self.password.encode()).hexdigest()
+
+    def verify(self, new_password):
+        return sha256(new_password.encode()).hexdigest() == self.password
+
+    def __repr__(self) -> str:
+        return f'<User : {self.id}> : {self.username}>'
+
+
+class UserSchema(ma.SQLAlchemyAutoSchema):
+    username = fields.String(required=True)
+    phone = fields.String(required=True)
+    password = fields.String(required=True)
+
+    @post_load
+    def create_user(self, user_data, **kwargs):
+        return Users(**user_data)
